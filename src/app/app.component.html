@@ -1,0 +1,28 @@
+<div class="container">
+  <h3 class="title mb-4" >TP CONVERSION DE DEVISE</h3>
+  <form #monForm=ngForm class="form">
+    <div class="form-group">
+      <label>Entrez la somme: </label>
+      <input type="number" class="form-control" name="somme" require [(ngModel)]=somme placeholder="Entrez une valeur"/>
+    </div>
+    <div class="form-group mt-4">
+      <label>Choisir la devise de depart: </label>
+      <select name="deviseDepart" class="form-control" [(ngModel)]=deviseDepart>
+        <option value="FCFA">FCFA</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EURO</option>
+      </select>
+    </div>
+    <div class="form-group mt-4">
+      <label>Choisir la devise de depart: </label>
+      <select name="deviseArrive" class="form-control" [(ngModel)]=deviseArrive>
+        <option value="FCFA">FCFA</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EURO</option>
+      </select>
+    </div>
+  </form>
+  <div class="alert alert-success mt-4">
+    {{somme|currencyPipe:deviseDepart:deviseArrive}}
+  </div>
+</div>
